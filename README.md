@@ -1,4 +1,4 @@
-\# AIAIAI Store
+# AIAIAI Store
 
 
 
@@ -14,19 +14,19 @@ precedenti basati solo su HTML, CSS e JavaScript.
 
 
 
-\## Contenuto del repository
+## Contenuto del repository
 
-\- File PHP per tutta la logica applicativa
+- File PHP per tutta la logica applicativa
 
-\- Fogli di stile CSS
+- Fogli di stile CSS
 
-\- File SQL per la creazione e il popolamento del database
+- File SQL per la creazione e il popolamento del database
 
-\- Relazione tecnica del progetto
+- Relazione tecnica del progetto
 
 
 
-\## Descrizione
+## Descrizione
 
 Piattaforma e-commerce per la vendita di abbonamenti mensili ad agenti di 
 
