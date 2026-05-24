@@ -1,0 +1,118 @@
+/*stile del blocco principale della pagina di conferma*/
+.conferma-main {
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+}
+
+/*struttura del contenitore centrale della conferma*/
+.conferma-box {
+    max-width: 680px; 
+    margin: 3rem auto;
+    border: 1px solid rgba(0,206,201,0.3); 
+    border-radius: 24px;
+    background: var(--bg-card); 
+    padding: 3rem 2.5rem; 
+    text-align: center;
+}
+
+/*dimensione dell icona di spunta ordine completato*/
+.conferma-icona { 
+    font-size: 4rem; 
+    margin-bottom: 1rem; 
+}
+
+/*titolo principale di conferma avvenuta ricezione*/
+.conferma-titolo { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    margin-bottom: 0.5rem; 
+    color: var(--cyan); 
+}
+
+/*sottotitolo descrittivo sotto il messaggio di conferma*/
+.conferma-sub { 
+    color: var(--text-dim); 
+    margin-bottom: 2.5rem; 
+    font-size: 0.95rem; 
+}
+
+/*scatola contenitrice dei dettagli specifici dell ordine*/
+.dettaglio-box {
+    border: 1px solid var(--border); 
+    border-radius: 14px;
+    background: var(--bg-glass); 
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    text-align: left;
+}
+
+/*titolo della sezione interna dei singoli riepiloghi*/
+.det-titolo { 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: var(--text-dim); 
+    text-transform: uppercase; 
+    letter-spacing: 0.06em; 
+    margin-bottom: 1rem; 
+}
+
+/*riga di layout flessibile per le singole voci dell ordine*/
+.det-row {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0.45rem 0; 
+    border-bottom: 1px solid var(--border); 
+    font-size: 0.9rem;
+}
+
+/*rimozione del bordo inferiore per l ultima riga di dati*/
+.det-row:last-child { 
+    border-bottom: none; 
+}
+
+/*etichetta descrittiva sinistra della riga di riepilogo*/
+.det-label { 
+    color: var(--text-dim); 
+}
+
+/*valore testuale destro in grassetto della riga corrente*/
+.det-val { 
+    font-weight: 600; 
+}
+
+/*colore specifico per lo stato dell abbonamento attivo*/
+.det-attivo-testo {
+    color: var(--cyan);
+}
+
+/*stile evidenziato per la cifra numerica del totale complessivo*/
+.det-totale { 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    color: var(--accent-lt); 
+}
+
+/*allineamento e spaziatura del gruppo dei pulsanti inferiori*/
+.azioni { 
+    display: flex; 
+    gap: 1rem; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin-top: 2rem; 
+}
+
+/*stile del pulsante secondario con bordo trasparente*/
+.btn-outline {
+    padding: 0.7rem 1.5rem; 
+    border: 1px solid var(--border-hi);
+    border-radius: 10px; 
+    color: var(--text); 
+    text-decoration: none;
+    font-size: 0.9rem; 
+    transition: border-color 0.2s;
+}
+
+/*effetto visivo al passaggio del mouse sul pulsante outline*/
+.btn-outline:hover { 
+    border-color: var(--accent); 
+}

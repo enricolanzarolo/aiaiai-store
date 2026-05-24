@@ -1,0 +1,201 @@
+/* Allineamenti e gestione della barra utente */
+.nav-user { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.2rem; 
+}
+.nav-nome { 
+    color: var(--text-dim); 
+    font-size: 0.9rem; 
+}
+.nav-nome span { 
+    color: var(--accent-lt); 
+    font-weight: 600; 
+}
+
+/* Pulsante interattivo del carrello */
+.carrello-btn {
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem; 
+    border: 1px solid var(--border-hi);
+    border-radius: 8px; 
+    background: var(--bg-glass); 
+    color: var(--text);
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    transition: border-color 0.2s;
+}
+.carrello-btn:hover { 
+    border-color: var(--accent); 
+}
+.carrello-badge {
+    position: absolute; 
+    top: -8px; 
+    right: -8px;
+    background: var(--accent); 
+    color: #fff; 
+    font-size: 0.7rem; 
+    font-weight: 700;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* Struttura principale della pagina */
+.main-storico {
+    padding: 2rem clamp(1rem, 5vw, 4rem); 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+.sezionetitolo {
+    margin-bottom: 0.5rem;
+}
+.sezione-desc {
+    margin-bottom: 2rem;
+}
+
+/* Griglia delle statistiche generali */
+.stats-row {
+    display: flex; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+    margin-bottom: 2.5rem;
+}
+.stat-box {
+    flex: 1; 
+    min-width: 150px;
+    border: 1px solid var(--border); 
+    border-radius: 14px;
+    background: var(--bg-card); 
+    padding: 1.2rem 1.5rem;
+}
+.stat-num { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    color: var(--accent-lt); 
+}
+.stat-label { 
+    font-size: 0.82rem; 
+    color: var(--text-dim); 
+    margin-top: 0.2rem; 
+}
+
+/* Contenitore e formattazione della tabella abbonamenti */
+.tabella-container {
+    border: 1px solid var(--border); 
+    border-radius: 16px; 
+    background: var(--bg-card); 
+    overflow: hidden;
+}
+.ordini-tabella {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 1.5rem;
+}
+.ordini-tabella th {
+    text-align: left; 
+    padding: 0.8rem 1rem;
+    font-size: 0.78rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.06em;
+    color: var(--text-dim); 
+    border-bottom: 1px solid var(--border-hi);
+}
+.ordini-tabella td {
+    padding: 1rem; 
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem; 
+    vertical-align: middle;
+}
+.ordini-tabella tr:hover td { 
+    background: var(--bg-glass); 
+}
+.ordini-tabella tr:last-child td { 
+    border-bottom: none; 
+}
+
+/* Elementi di stato dei singoli piani */
+.stato-badge {
+    display: inline-block; 
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px; 
+    font-size: 0.78rem; 
+    font-weight: 700;
+}
+.stato-attivo    { background: rgba(0,206,201,0.12); color: var(--cyan); border: 1px solid var(--cyan); }
+.stato-scaduto   { background: rgba(255,165,0,0.12); color: #ffb347; border: 1px solid rgba(255,165,0,0.4); }
+.stato-annullato { background: rgba(255,100,100,0.1); color: #ff6464; border: 1px solid rgba(255,100,100,0.3); }
+
+/* Pulsanti e azioni di riga */
+.btn-annulla {
+    padding: 0.35rem 0.9rem; 
+    border-radius: 8px;
+    border: 1px solid rgba(255,100,100,0.3); 
+    color: #ff6464;
+    background: transparent; 
+    font-size: 0.82rem; 
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+.btn-annulla:hover { 
+    border-color: #ff4646; 
+    color: #ff4646; 
+}
+.azioni-td { 
+    display: flex; 
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
+}
+.nessuna-azione {
+    color: var(--text-dim); 
+    font-size: 0.85rem;
+}
+
+/* Layout per lo stato senza abbonamenti */
+.nessun-ordine {
+    text-align: center; 
+    padding: 4rem 2rem;
+    border: 1px dashed var(--border-hi); 
+    border-radius: 16px;
+    background: var(--bg-card); 
+    margin-top: 2rem;
+}
+.icona-vuota {
+    font-size: 3rem; 
+    margin-bottom: 0.5rem;
+}
+.nessun-ordine p { 
+    color: var(--text-dim); 
+    margin-bottom: 1.5rem; 
+}
+
+/* Notifiche ed elementi di ritorno */
+.msg-ok {
+    background: rgba(0,206,201,0.1); 
+    border: 1px solid var(--cyan);
+    color: var(--cyan); 
+    padding: 0.8rem 1.2rem; 
+    border-radius: 10px;
+    margin-bottom: 1.5rem; 
+    font-size: 0.9rem;
+}
+.torna-store-container {
+    margin-top: 2rem;
+}
+.link-ritorno {
+    color: var(--accent-lt); 
+    text-decoration: none; 
+    font-size: 0.9rem;
+}
+
+.td-agenti {
+    color: #a29bfe;
+    font-size: 0.85rem;
+    max-width: 200px;
+}

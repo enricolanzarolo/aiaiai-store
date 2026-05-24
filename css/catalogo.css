@@ -1,0 +1,351 @@
+/*stile del contenitore della griglia principale*/
+.catalogo-container {
+    padding: 2rem clamp(1rem, 5vw, 4rem); 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/*stile del menu utente nella testata superiore*/
+.nav-user { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.2rem; 
+}
+
+/*stile del testo del saluto utente loggato*/
+.nav-nome { 
+    color: var(--text-dim); 
+    font-size: 0.9rem; 
+}
+
+/*evidenziatore del nome dell utente corrente*/
+.nav-nome span { 
+    color: var(--accent-lt); 
+    font-weight: 600; 
+}
+
+/*stile del pulsante di accesso al carrello*/
+.carrello-btn {
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--border-hi);
+    border-radius: 8px;
+    background: var(--bg-glass);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+/*effetto al passaggio del mouse sul pulsante carrello*/
+.carrello-btn:hover { 
+    border-color: var(--accent); 
+}
+
+/*stile del cerchio con il numero degli elementi nel carrello*/
+.carrello-badge {
+    position: absolute; 
+    top: -8px; 
+    right: -8px;
+    background: var(--accent); 
+    color: #fff;
+    font-size: 0.7rem; 
+    font-weight: 700;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/*stile dei collegamenti di navigazione breadcrumb*/
+.breadcrumb {
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem;
+    font-size: 0.85rem; 
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+/*stile dei link interni del percorso breadcrumb*/
+.breadcrumb a { 
+    color: var(--accent-lt); 
+    text-decoration: none; 
+}
+
+/*effetto sottolineato per i link del percorso*/
+.breadcrumb a:hover { 
+    text-decoration: underline; 
+}
+
+/*griglia per la disposizione delle schede dei prodotti*/
+.piani-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+/*stile di base della scheda del singolo prodotto*/
+.piano-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg-card);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/*effetto di sollevamento della scheda del prodotto*/
+.piano-card:hover { 
+    transform: translateY(-4px); 
+}
+
+/*bordo superiore personalizzato per la fascia base*/
+.piano-card.base  { 
+    border-top: 3px solid var(--cyan); 
+}
+
+/*bordo superiore personalizzato per la fascia pro*/
+.piano-card.pro   { 
+    border-top: 3px solid var(--accent); 
+}
+
+/*bordo superiore personalizzato per la fascia enterprise*/
+.piano-card.enterprise { 
+    border-top: 3px solid var(--pink); 
+}
+
+/*effetto luminoso esterno al passaggio del mouse sulla card base*/
+.piano-card.base:hover  { 
+    box-shadow: 0 8px 32px var(--glow-cyan); 
+    border-color: var(--cyan); 
+}
+
+/*effetto luminoso esterno al passaggio del mouse sulla card pro*/
+.piano-card.pro:hover   { 
+    box-shadow: 0 8px 32px var(--glow-accent); 
+    border-color: var(--accent); 
+}
+
+/*effetto luminoso esterno al passaggio sulla card enterprise*/
+.piano-card.enterprise:hover { 
+    box-shadow: 0 8px 32px rgba(253,121,168,0.2); 
+    border-color: var(--pink); 
+}
+
+/*opacita ridotta per le schede dei prodotti non acquistabili*/
+.piano-card.bloccato {
+    opacity: 0.55;
+    filter: grayscale(0.4);
+}
+
+/*annullamento degli effetti grafici per la scheda bloccata*/
+.piano-card.bloccato:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/*stile del distintivo della fascia del prodotto corrente*/
+.piano-badge {
+    display: inline-block;
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+}
+
+/*colori e sfondi specifici per il distintivo base*/
+.badge-base { 
+    background: rgba(0,206,201,0.12); 
+    color: var(--cyan); 
+    border: 1px solid var(--cyan); 
+}
+
+/*colori e sfondi specifici per il distintivo pro*/
+.badge-pro  { 
+    background: rgba(108,92,231,0.12); 
+    color: var(--accent-lt); 
+    border: 1px solid var(--accent-lt); 
+}
+
+/*colori e sfondi specifici per il distintivo enterprise*/
+.badge-ent  { 
+    background: rgba(253,121,168,0.12); 
+    color: var(--pink); 
+    border: 1px solid var(--pink); 
+}
+
+/*dimensione del font per il titolo del prodotto*/
+.piano-nome { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+}
+
+/*stile descrittivo con riempimento automatico dello spazio*/
+.piano-desc { 
+    color: var(--text-dim); 
+    font-size: 0.9rem; 
+    line-height: 1.6; 
+    flex-grow: 1; 
+    margin-bottom: 1.5rem; 
+}
+
+/*stile del testo della cifra numerica del prezzo*/
+.piano-prezzo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+/*colore specifico del prezzo della fascia base*/
+.piano-prezzo.base  { 
+    color: var(--cyan); 
+}
+
+/*colore specifico del prezzo della fascia pro*/
+.piano-prezzo.pro   { 
+    color: var(--accent-lt); 
+}
+
+/*colore specifico del prezzo della fascia enterprise*/
+.piano-prezzo.enterprise { 
+    color: var(--pink); 
+}
+
+/*stile del testo secondario per la frequenza di rinnovo*/
+.piano-mese { 
+    color: var(--text-dim); 
+    font-size: 0.85rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/*disposizione flessibile per i pulsanti delle azioni*/
+.piano-actions { 
+    display: flex; 
+    gap: 0.75rem; 
+    flex-wrap: wrap; 
+}
+
+/*stile del pulsante per aprire i dettagli del prodotto*/
+.btn-dettagli {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-hi);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+}
+
+/*effetto cambio colore bordo per il pulsante dettagli*/
+.btn-dettagli:hover { 
+    border-color: var(--text-dim); 
+}
+
+/*stile generale dei pulsanti di aggiunta al carrello*/
+.btn-aggiungi {
+    flex: 2;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+}
+
+/*effetto opacita e zoom leggero per aggiunta carrello*/
+.btn-aggiungi:hover { 
+    opacity: 0.85; 
+    transform: scale(1.02); 
+}
+
+/*effetto pressione sui pulsanti attivi di acquisto*/
+.btn-aggiungi:active { 
+    transform: scale(0.98); 
+}
+
+/*colore di sfondo specifico per il pulsante base*/
+.btn-base { background: var(--cyan); color: #06060e; }
+/*colore di sfondo specifico per il pulsante pro*/
+.btn-pro  { background: var(--accent); color: #fff; }
+/*colore di sfondo specifico per il pulsante enterprise*/
+.btn-ent  { background: var(--pink); color: #06060e; }
+
+/*stile statico del pulsante se il prodotto e nel carrello*/
+.btn-gia-in-carrello {
+    flex: 2; padding: 0.6rem 1rem; border-radius: 8px;
+    font-size: 0.85rem; text-align: center;
+    background: rgba(255,255,255,0.05); color: var(--text-dim);
+    border: 1px solid var(--border); cursor: default;
+}
+
+/*stile statico per indicare un abbonamento gia pagato*/
+.btn-gia-attivo {
+    flex: 2; padding: 0.6rem 1rem; border-radius: 8px;
+    font-size: 0.85rem; text-align: center;
+    background: rgba(0,206,201,0.07); color: var(--cyan);
+    border: 1px solid rgba(0,206,201,0.3); cursor: default;
+}
+
+/*stile del pulsante con sfumatura per passare di livello*/
+.btn-upgrade {
+    flex: 2; padding: 0.6rem 1rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem; text-align: center;
+    text-decoration: none; border: none; cursor: pointer;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    color: #fff; transition: opacity 0.2s, transform 0.15s;
+}
+
+/*effetto visivo al passaggio del mouse sull upgrade*/
+.btn-upgrade:hover { 
+    opacity: 0.85; 
+    transform: scale(1.02); 
+}
+
+/*stile statico spento per i pulsanti non abilitati*/
+.btn-bloccato {
+    flex: 2; padding: 0.6rem 1rem; border-radius: 8px;
+    font-size: 0.85rem; text-align: center;
+    background: transparent; color: var(--text-dim);
+    border: 1px solid var(--border); cursor: not-allowed;
+}
+
+/*stile grafico del banner di conferma operazione eseguita*/
+.msg-successo {
+    background: rgba(0,206,201,0.1); border: 1px solid var(--cyan);
+    color: var(--cyan); padding: 0.8rem 1.2rem; border-radius: 10px;
+    margin-bottom: 1.5rem; font-size: 0.9rem;
+}
+
+/*stile del banner informativo superiore dell abbonamento attivo*/
+.banner-abbonamento {
+    background: rgba(0,206,201,0.06);
+    border: 1px solid rgba(0,206,201,0.2);
+    border-radius: 12px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/*colore in evidenza per il testo in grassetto nel banner*/
+.banner-abbonamento strong { 
+    color: var(--cyan); 
+}

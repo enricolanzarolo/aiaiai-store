@@ -1,0 +1,255 @@
+.carrello-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.sezionetitolo {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.sezione-desc {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.carrello-vuoto {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.icona-vuoto {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.carrello-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.lista-prodotti {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prodotto-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.prodotto-info {
+    flex: 1;
+}
+
+.prodotto-nome {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prodotto-fascia {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.carrello-vuoto .cta {
+    margin-top: 30px;
+}
+.f-pro { background: #3b82f6; color: #fff; }
+.f-ent { background: #a855f7; color: #fff; }
+.f-basic { background: #10b981; color: #fff; }
+
+.prodotto-cat {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.prodotto-prezzo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 25px;
+}
+
+.btn-rimuovi {
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.continua-shopping {
+    display: inline-block;
+    margin-top: 15px;
+    color: #888;
+    text-decoration: none;
+}
+
+.riepilogo-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.riepilogo-box h3 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.riepilogo-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.riepilogo-totale {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.sezione-pag {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.sezione-pag h4 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.carta-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.carta-icon {
+    font-size: 1.4rem;
+}
+
+.carta-num {
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.carta-scad {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.nuova-carta-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.form-nuova {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.form-nuova.visibile {
+    display: flex;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.form-group input, .form-group select {
+    padding: 8px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.salva-label {
+    font-size: 0.85rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.btn-paga {
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .carrello-layout {
+        flex-direction: column;
+    }
+    .riepilogo-box {
+        width: 100%;
+    }
+}

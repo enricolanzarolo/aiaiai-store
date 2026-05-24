@@ -1,0 +1,288 @@
+/* ═══════════════════════════════════════════
+   AIAIAI STORE — Login Page
+   ═══════════════════════════════════════════ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-deep:    #06060e;
+    --bg-card:    rgba(255, 255, 255, 0.03);
+    --bg-glass:   rgba(255, 255, 255, 0.05);
+    --border:     rgba(255, 255, 255, 0.06);
+    --border-hi:  rgba(255, 255, 255, 0.12);
+
+    --text:       #e8e8ef;
+    --text-dim:   #6b6b80;
+    --text-muted: #3d3d50;
+
+    --accent:     #6c5ce7;
+    --accent-lt:  #a29bfe;
+    --cyan:       #00cec9;
+    --pink:       #fd79a8;
+
+    --glow-accent: rgba(108, 92, 231, 0.35);
+    --glow-cyan:   rgba(0, 206, 201, 0.25);
+
+    --font: 'Inter', 'SF Pro Display', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* ── BACKGROUND EFFECTS ── */
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle, var(--glow-accent), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0%   { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+    100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ── LOGIN CONTAINER ── */
+
+.login-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    animation: fade-up 0.8s var(--ease) both;
+}
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-lt), transparent);
+}
+
+/* ── LOGO ── */
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-logo .logo-main {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    background: linear-gradient(135deg, var(--accent-lt), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+}
+
+.login-logo .logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ── FORM ── */
+
+.login-box h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.login-subtitle {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+.errore-msg {
+    background: rgba(253, 121, 168, 0.1);
+    border: 1px solid rgba(253, 121, 168, 0.3);
+    color: var(--pink);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    color: #e8e8ef !important;
+    -webkit-text-fill-color: #e8e8ef !important;
+    font-family: var(--font);
+    font-size: 0.9rem;
+    transition: all 0.3s var(--ease);
+    outline: none;
+}
+
+/* ── AUTOFILL BROWSER OVERRIDE ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #0a0a14 inset !important;
+    -webkit-text-fill-color: #e8e8ef !important;
+    caret-color: #e8e8ef;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-lt);
+    box-shadow: 0 0 0 3px rgba(162, 155, 254, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+    -webkit-text-fill-color: #3d3d50;
+    opacity: 1;
+}
+
+.login-btn {
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--accent), #8b7cf7);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.4s var(--ease);
+    box-shadow: 0 4px 25px var(--glow-accent);
+    font-family: var(--font);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 35px var(--glow-accent);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* ── BACK LINK ── */
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: all 0.3s var(--ease);
+}
+
+.back-link:hover {
+    color: var(--accent-lt);
+}
+
+/* ── FOOTER ── */
+
+.login-footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    opacity: 0.6;
+}

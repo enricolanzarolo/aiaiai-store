@@ -1,0 +1,216 @@
+/*variabili globali per la palette colori della dashboard*/
+:root {
+    --bg-principal: #0b0c10;
+    --bg-card: #1f2833;
+    --cyan: #45f3ff;
+    --text-color: #ffffff;
+    --text-dim: #c5c6c7;
+    --border-color: #2f3b4c;
+}
+
+/*impostazioni generali del corpo pagina*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/*barra di navigazione superiore*/
+header {
+    background-color: #151c24;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/*stile del logo testuale*/
+.logo-area h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+.logo-area span { 
+    color: var(--cyan); 
+}
+
+/*collegamenti di navigazione*/
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+/*pulsante per ritornare al sito pubblico*/
+.btn-ritorna {
+    background-color: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+}
+.btn-ritorna:hover {
+    background-color: var(--cyan);
+    color: #000;
+}
+
+/*pulsante per effettuare il logout*/
+.btn-logout {
+    color: #ff6b6b;
+    margin-left: 10px;
+}
+
+/*contenitore centrale principale*/
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/*messaggio di benvenuto utente*/
+.welcome-msg {
+    margin-bottom: 2rem;
+}
+.welcome-msg h2 { 
+    margin: 0; 
+    font-size: 1.8rem; 
+}
+.welcome-msg p { 
+    color: var(--text-dim); 
+    margin: 0.3rem 0 0 0; 
+}
+
+/*griglia per i contatori kpi delle statistiche*/
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/*singola scatola contatore statistico*/
+.kpi-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+/*bordo superiore personalizzato per la scatola in evidenza*/
+.kpi-evidenziato {
+    border-top: 3px solid var(--cyan);
+}
+
+/*etichetta descrittiva del contatore statistico*/
+.kpi-box .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/*numero grande del valore del contatore*/
+.kpi-box .number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+/*colore verde per valori monetari in attivo*/
+.kpi-positivo {
+    color: #2ecc71 !important;
+}
+
+/*disposizione affiancata a due colonne per i blocchi inferiori*/
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/*adattamento responsivo per schermi piccoli*/
+@media (max-width: 768px) {
+    .dashboard-layout { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/*blocco contenitore per liste e avanzamenti*/
+.card-block {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/*titoli interni delle card di riepilogo*/
+.card-block h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.6rem;
+    color: var(--cyan);
+}
+
+/*singola riga della barra di progresso*/
+.progress-row {
+    margin-bottom: 1.2rem;
+}
+
+/*informazioni testuali sopra la barra di progresso*/
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+/*nome del piano in maiuscolo*/
+.progress-nome {
+    text-transform: uppercase; 
+    font-weight: 600; 
+    font-size: 0.8rem;
+}
+
+/*sfondo neutro scuro della barra*/
+.progress-bar-bg {
+    background-color: #111;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/*riempimento dinamico color ciano della barra*/
+.progress-bar-fill {
+    background-color: var(--cyan);
+    height: 100%;
+}
+
+/*lista utenti iscritti senza fronzoli*/
+.simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*elemento singolo della lista utenti*/
+.list-item {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+}
+.list-item:last-child { 
+    border-bottom: none; 
+}
+.list-item small { 
+    color: var(--text-dim); 
+    display: block; 
+    margin-top: 0.2rem; 
+}
